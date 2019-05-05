@@ -1,0 +1,78 @@
+﻿<Window x:Class="SimpleCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleCalc"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Calculator" Height="500" Width="350">
+
+    <DockPanel Name="SimpleCalc">
+        
+        <Grid Name="Grid" Background="#FF3B3B3C">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <TextBox Name="Display" FontSize="36" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2" TextAlignment="Right" BorderBrush="{x:Null}" Background="#FF1F1F1F" SelectionBrush="#FF494949" Foreground="White" VerticalContentAlignment="Center"/>
+
+
+            <ComboBox x:Name="CalcState" Margin="1,1,1,1" Grid.Column="3" Grid.Row="0" Background="#FF4A4A4A" Foreground="White" BorderBrush="{x:Null}" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Background="#FF4A4A4A">STANDARD</ComboBoxItem>
+            <ComboBoxItem Background="#FF4A4A4A">FUNCTIONS</ComboBoxItem>
+            </ComboBox>
+            <Canvas Width="65" Height="46" Grid.Row="0" Grid.Column="3" Background="#FF3B3B3C" HorizontalAlignment="Left" VerticalAlignment="Center">
+                </Canvas>
+
+            
+            <Button Name="ButtonPer" Margin="1,1,1,1" Grid.Column="0" Grid.Row="4" FontSize="16" Foreground="White" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="SingleOperationButton_Click">%</Button>
+            <Button Name="ButtonSqrt" Margin="1,1,1,1" Grid.Column="1" Grid.Row="4" FontSize="16" Foreground="White" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="SingleOperationButton_Click">√</Button>
+            <Button Name="ButtonPow2" Margin="1,1,1,1" Grid.Column="2" Grid.Row="4" FontSize="16" Foreground="White" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="SingleOperationButton_Click">x²</Button>
+            <Button Name="Button1Divx" Margin="1,1,1,1" Grid.Column="3" Grid.Row="4" FontSize="16" Foreground="White" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="SingleOperationButton_Click">1/x</Button>
+
+            <Button Name="ButtonCe" Margin="1,1,1,1" Grid.Column="0" Grid.Row="5" Foreground="White" FontSize="16" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="Button_Click">CE</Button>
+            <Button Name="ButtonC" Margin="1,1,1,1" Grid.Column="1" Grid.Row="5" Foreground="White" FontSize="16" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="Button_Click">C</Button>
+            <Button Name="ButtonDel" Margin="1,1,1,1" Grid.Column="2" Grid.Row="5" Foreground="White" FontSize="16" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="Button_Click">DEL</Button>
+            <Button Name="ButtonDiv" Margin="1,1,1,1" Grid.Column="3" Grid.Row="5" Foreground="White" FontSize="26" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="OperationButton_Click">/</Button>
+
+            <Button Name="Button7" Margin="1,1,1,1" Grid.Column="0" Grid.Row="6" Foreground="White" FontSize="26"  Background="Black" BorderBrush="{x:Null}" Click="DigitButton_Click">7</Button>
+            <Button Name="Button8" Margin="1,1,1,1" Grid.Column="1" Grid.Row="6" Foreground="White" FontSize="26" Background="Black" BorderBrush="{x:Null}" Click="DigitButton_Click">8</Button>
+            <Button Name="Button9" Margin="1,1,1,1" Grid.Column="2" Grid.Row="6" Foreground="White" FontSize="26" Background="Black" BorderBrush="{x:Null}" Click="DigitButton_Click">9</Button>
+            <Button Name="ButtonMultiply" Margin="1,1,1,1" Grid.Column="3" Grid.Row="6" Foreground="White" FontSize="26" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="OperationButton_Click">*</Button>
+
+            <Button Name="Button4" Margin="1,1,1,1" Grid.Column="0" Grid.Row="7" Foreground="White" FontSize="26" Background="Black" BorderBrush="{x:Null}" Click="DigitButton_Click">4</Button>
+            <Button Name="Button5" Margin="1,1,1,1" Grid.Column="1" Grid.Row="7" Foreground="White" FontSize="26" BorderBrush="{x:Null}" Background="Black" Click="DigitButton_Click">5</Button>
+            <Button Name="Button6" Margin="1,1,1,1" Grid.Column="2" Grid.Row="7" Foreground="White" FontSize="26" Background="Black" BorderBrush="{x:Null}" Click="DigitButton_Click">6</Button>
+            <Button Name="ButtonSub" Margin="1,1,1,1" Grid.Column="3" Grid.Row="7" Foreground="White" FontSize="26" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="OperationButton_Click">-</Button>
+
+            <Button Name="Button1" Margin="1,1,1,1" Grid.Column="0" Grid.Row="8" Foreground="White" FontSize="26" Background="Black" BorderBrush="{x:Null}" Click="DigitButton_Click">1</Button>
+            <Button Name="Button2" Margin="1,1,1,1" Grid.Column="1" Grid.Row="8" Foreground="White" FontSize="26" Background="Black" BorderBrush="{x:Null}" Click="DigitButton_Click">2</Button>
+            <Button Name="Button3" Margin="1,1,1,1" Grid.Column="2" Grid.Row="8" Foreground="White" FontSize="26" Background="Black" BorderBrush="{x:Null}" Click="DigitButton_Click">3</Button>
+            <Button Name="ButtonAdd" Margin="1,1,1,1" Grid.Column="3" Grid.Row="8" Foreground="White" FontSize="26" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="OperationButton_Click">+</Button>
+
+            <Button Name="ButtonPlusMinus" Margin="1,1,1,1" Grid.Column="0" Grid.Row="9" Foreground="White" FontSize="26" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="Button_Click">+/-</Button>
+            <Button Name="Button0" Margin="1,1,1,1" Grid.Column="1" Grid.Row="9" FontSize="26" Foreground="White" Background="Black" BorderBrush="{x:Null}" Click="DigitButton_Click">0</Button>
+            <Button Name="ButtonDot" Margin="1,1,1,1" Grid.Column="2" Grid.Row="9" FontSize="26" Foreground="White" BorderBrush="{x:Null}" Background="#FF4A4A4A" Click="Button_Click">.</Button>
+            <Button Name="ButtonEqual" Margin="1,1,1,1" Grid.Column="3" Grid.Row="9" FontSize="26" Foreground="White" Background="#FF4A4A4A" BorderBrush="{x:Null}" Click="OperationButton_Click">=</Button>
+
+        </Grid>
+        
+    </DockPanel>
+</Window>

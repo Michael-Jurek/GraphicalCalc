@@ -1,0 +1,60 @@
+﻿<Window x:Class="SimpleCalc.View.AddFunction"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleCalc.View"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="AddFunction" Height="450" Width="600">
+    <Grid Background="#FF1F1F1F">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" Foreground="White" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center">Functions</Label>
+        <TextBox Name="Functions" Margin="10,0,10,0" Foreground="White" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="2" Background="#FF4A4A4A" TextChanged="Functions_TextChanged"></TextBox>
+
+        <Button Name="BracketsButton" Margin="10,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="3" Grid.Column="0" Click="Button_Click">()</Button>
+        <Button Name="LeftBracketButton" Margin="5,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="3" Grid.Column="1" Click="Button_Click">(</Button>
+        <Button Name="RightBracketButton" Margin="5,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="3" Grid.Column="2" Click="Button_Click">)</Button>
+        <Button Name="PiButton" Margin="5,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="3" Grid.Column="3" Click="Button_Click">π</Button>
+        <Button Name="EButton" Margin="5,2,10,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="3" Grid.Column="4" Click="Button_Click">e</Button>
+
+        <Button Name="SinButton" Margin="10,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="4" Grid.Column="0" Click="Button_Click">sin(x)</Button>
+        <Button Name="CosButton" Margin="5,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="4" Grid.Column="1" Click="Button_Click">cos(x)</Button>
+        <Button Name="TanButton" Margin="5,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="4" Grid.Column="2" Click="Button_Click">tan(x)</Button>
+        <Button Name="CotgButton" Margin="5,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="4" Grid.Column="3" Click="Button_Click">ctg(x)</Button>
+        <Button Name="LogButton" Margin="5,2,10,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="4" Grid.Column="4" Click="Button_Click">log(x)</Button>
+
+        <Button Name="PlusButton" Margin="10,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="5" Grid.Column="0" Click="Button_Click">+</Button>
+        <Button Name="MinusButton" Margin="5,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="5" Grid.Column="1" Click="Button_Click">-</Button>
+        <Button Name="MultiplyButton" Margin="5,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="5" Grid.Column="2" Click="Button_Click">*</Button>
+        <Button Name="DivideButton" Margin="5,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="5" Grid.Column="3" Click="Button_Click">/</Button>
+        <Button Name="PowButton" Margin="5,2,10,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="5" Grid.Column="4" Click="Button_Click">^</Button>
+
+        <Button Name="AbsButton" Margin="10,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="6" Grid.Column="0" Click="Button_Click">abs(x)</Button>
+        <Button Name="XButton" Margin="5,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="6" Grid.Column="1" Click="Button_Click">x</Button>
+
+        <Label Grid.Row="7" Grid.Column="0" Margin="10,0,0,0" Foreground="White" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center">Color</Label>
+        <xctk:ColorPicker Name="cp" Margin="10,2,10,2" Background="#FF4A4A4A" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" DisplayColorAndName="True" SelectedColorChanged="SelectedColorChanged1"></xctk:ColorPicker>
+
+        <Button Name="OkButton" Margin="10,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Click="OkButton_Click">OK</Button>
+        <Button Name="CancelButton" Margin="5,2,5,2" Foreground="White" FontSize="20" Background="#FF4A4A4A" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" Click="CancelButton_Click">CANCEL</Button>
+    </Grid>
+</Window>
